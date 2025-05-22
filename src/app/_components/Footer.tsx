@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex items-center mb-2">
               <div>
                 <h2 className="text-xl font-bold text-dark-from dark:text-neutral-900">
-                  Vortex.dev
+                  Vortex
                 </h2>
                 <div className="flex gap-2 items-center">
                   <NG width={25} height={25} />
@@ -32,7 +32,7 @@ export default function Footer() {
       </div>
       <div className="text-foreground pb-6 px-5 sm:px-20 xl:px-52">
         <div className="mx-auto flex justify-between items-center">
-          <p className="text-xs sm:text-sm">
+          <p className="text-xs sm:text-sm text-dark-from dark:text-neutral-0">
             &copy; 2025 Vortex.
             <br className="block sm:hidden" />
             {""} All rights reserved

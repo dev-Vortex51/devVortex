@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { BiDownload } from "react-icons/bi";
+import React, { useEffect } from "react";
 import { BsEnvelope, BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { CiAt } from "react-icons/ci";
 import { FaLaptopCode, FaLayerGroup } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 import { IoMdColorPalette } from "react-icons/io";
+import { MdDownload } from "react-icons/md";
 
 function page() {
   return (
@@ -50,7 +51,9 @@ function page() {
                 Frontend developer{" "}
               </span>
               with a passion for creating beautiful and functional web
-              applications...
+              applications. I love to learn new technologies and improve my
+              skills. I am currently looking for new opportunities to work on
+              exciting projects.
             </p>
 
             {/* Buttons + Socials */}
@@ -60,15 +63,15 @@ function page() {
                   href="/My Resume.pdf"
                   className="inline-flex items-center gap-4 border-border-light dark:border-dark-from text-dark-from dark:text-neutral-0 dark:bg-dark-from justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 shadow-xl"
                 >
-                  <BiDownload />
+                  <MdDownload />
                   <span>Resume</span>
                 </a>
                 <Link
-                  href="/projects"
+                  href="mailto:qudusbello51@gmail.com"
                   className="inline-flex items-center gap-4 border-border-light dark:border-dark-from text-dark-from dark:text-neutral-0 dark:bg-dark-from justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 shadow-xl"
                 >
-                  <GrProjects />
-                  <span>View Projects</span>
+                  <CiAt />
+                  <span>Contact me</span>
                 </Link>
               </div>
 

@@ -2,13 +2,16 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { HiOutlineSun } from "react-icons/hi";
+import Image from "next/image";
+import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
 import { BsCodeSlash } from "react-icons/bs";
 import { BiMenu } from "react-icons/bi";
+import { useAppContext } from "../_contexts/AppContext";
 
 export default function Header() {
   const sentinelRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
+  const { handleToggle, isDarkMode } = useAppContext();
 
   useEffect(() => {
     const sentinel = sentinelRef.current;
@@ -36,9 +39,14 @@ export default function Header() {
         <div className="w-full mx-auto flex justify-between items-center px-5 sm:px-20 xl:px-52">
           <div className="flex items-center gap-10">
             <Link href="/" className="flex items-center gap-2">
-              <BsCodeSlash />
+              <Image
+                width={50}
+                height={50}
+                src={"/logo-vortex.png"}
+                alt="logo"
+              />
               <h2 className="text-2xl font-bold dark:text-neutral-900">
-                Vortex.dev
+                Vortex
               </h2>
             </Link>
             <nav className="hidden md:flex gap-10">
@@ -63,8 +71,11 @@ export default function Header() {
             </nav>
           </div>
           <div className="flex items-center gap-3">
-            <button className="inline-flex items-center cursor-pointer text-dark-from dark:text-neutral-0 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-border-light dark:border-border hover:bg-accent hover:text-accent-foreground h-10 w-10 bg-gradient-gray">
-              <HiOutlineSun />
+            <button
+              className="inline-flex items-center cursor-pointer text-dark-from dark:text-neutral-0 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-border-light dark:border-border hover:bg-accent hover:text-accent-foreground h-10 w-10 bg-gradient-gray"
+              onClick={handleToggle}
+            >
+              {!isDarkMode ? <HiOutlineSun /> : <HiOutlineMoon />}
             </button>
             <button className="inline-flex items-center cursor-pointer text-dark-from dark:text-neutral-0 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-border-light dark:border-border hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden bg-gradient-gray">
               <BiMenu />
