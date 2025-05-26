@@ -24,6 +24,11 @@
   --color-dark-to: #091540;
   --color-border: #2c2c2c;
   --color-border-light: hsl(240 5.9% 90%);
+  --color-primary: hsl(263, 31%, 15%);
+  --color-mesh-red: hsl(331 100% 50%);
+  --color-mesh-purple: hsl(0 100% 59%);
+  --color-mesh-blue: hsl(198 100% 50%);
+  --color-mesh-orange: hsl(34 100% 65%);
 
   --text-paragraph: 16px;
 }
@@ -32,4 +37,28 @@ html,
 body {
   transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mesh-gradient {
+  background: radial-gradient(
+      at 38% 100%,
+      var(--color-mesh-red) 0px,
+      transparent 30%
+    ),
+    radial-gradient(at 97% 50%, var(--color-mesh-purple) 0px, transparent 35%),
+    radial-gradient(at 80% 130%, var(--color-mesh-blue) 0px, transparent 35%),
+    radial-gradient(at 20% 160%, var(--color-mesh-orange) 0px, transparent 35%);
+}
+
+.bg-gradient-primary {
+  background-image: radial-gradient(
+      146.13% 118.42% at 50% -15.5%,
+      hsl(var(--color-primary) / 0.04) 0,
+      hsl(var(--color-primary) / 0) 99.59%
+    ),
+    linear-gradient(
+      200deg,
+      hsl(var(--color-primary) / 0) 0,
+      hsl(var(--color-primary) / 0.04) 100%
+    );
 }

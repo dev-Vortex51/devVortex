@@ -9,11 +9,14 @@ interface AppContextType {
   isDarkMode: boolean;
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
   handleToggle: () => void;
+  isOpenSidebar: boolean;
+  setIsOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const AppContext = createContext<AppContextType | null>(null);
 
 const AppProvider = ({ children }: ChildProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   function handleToggle() {
     setIsDarkMode((dark) => !dark);
   }
@@ -34,6 +37,8 @@ const AppProvider = ({ children }: ChildProps) => {
         isDarkMode,
         setIsDarkMode,
         handleToggle,
+        isOpenSidebar,
+        setIsOpenSidebar,
       }}
     >
       {children}
